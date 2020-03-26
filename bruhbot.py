@@ -110,7 +110,7 @@ async def on_message(message):
                 counters[homechannels.index(message.channel)] = 0
             else:
                 counters[homechannels.index(message.channel)]+=1
-    if message.content.startswith("elf!echo") and (message.author.id == SUPERUSER or message.author.permissions_in(message.channel).manage_messages):
+    if message.content.startswith("elf!echo") and message.author.id == SUPERUSER:
         logging.info("echoed :"+message.content[9:])
         for i in homechannels :
             if i != None :
